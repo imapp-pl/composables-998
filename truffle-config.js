@@ -1,13 +1,17 @@
 module.exports = {
-    solc: {
-      optimizer: {
-        enabled: true,
-        runs: 200
-      }
-    },
     compilers: {
         solc: {
-          version: "^0.4.21"
+            version: "^0.4.21",
+            settings: {
+                optimizer: {
+                    // disabled by default
+                    enabled: true,
+                    // Optimize for how many times you intend to run the code.
+                    // Lower values will optimize more for initial deployment cost, higher
+                    // values will optimize more for high-frequency usage.
+                    runs: 200
+                }
+            }
         }
     }
 
